@@ -1,0 +1,107 @@
+{
+    "properties": {
+        "name": "main",
+        "environment": {
+            "type": "noflo-browser",
+            "content": "<canvas id=\"gamecanvas\" width=\"256\" height=\"256\"></canvas>\n<button id=\"startbutton\">Start Flooming!</button>"
+        },
+        "description": "Guide your ship through the generative rapids!",
+        "icon": ""
+    },
+    "inports": {},
+    "outports": {},
+    "groups": [],
+    "processes": {
+        "prompts/Alert_lfb1t": {
+            "component": "prompts/Alert",
+            "metadata": {
+                "label": "prompts/Alert",
+                "x": 900,
+                "y": 36,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "interaction/ListenMouse_egfa4": {
+            "component": "interaction/ListenMouse",
+            "metadata": {
+                "label": "interaction/ListenMouse",
+                "x": 576,
+                "y": 108,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "dom/GetElement_45ppi": {
+            "component": "dom/GetElement",
+            "metadata": {
+                "label": "dom/GetElement",
+                "x": 396,
+                "y": 180,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "core/Kick_ccrdf": {
+            "component": "core/Kick",
+            "metadata": {
+                "label": "core/Kick",
+                "x": 756,
+                "y": 72,
+                "width": 72,
+                "height": 72
+            }
+        }
+    },
+    "connections": [
+        {
+            "src": {
+                "process": "dom/GetElement_45ppi",
+                "port": "element"
+            },
+            "tgt": {
+                "process": "interaction/ListenMouse_egfa4",
+                "port": "element"
+            },
+            "metadata": {}
+        },
+        {
+            "src": {
+                "process": "interaction/ListenMouse_egfa4",
+                "port": "click"
+            },
+            "tgt": {
+                "process": "core/Kick_ccrdf",
+                "port": "in"
+            },
+            "metadata": {
+                "route": null
+            }
+        },
+        {
+            "src": {
+                "process": "core/Kick_ccrdf",
+                "port": "out"
+            },
+            "tgt": {
+                "process": "prompts/Alert_lfb1t",
+                "port": "in"
+            },
+            "metadata": {}
+        },
+        {
+            "data": "#startbutton",
+            "tgt": {
+                "process": "dom/GetElement_45ppi",
+                "port": "selector"
+            }
+        },
+        {
+            "data": "\"supp\"",
+            "tgt": {
+                "process": "core/Kick_ccrdf",
+                "port": "data"
+            }
+        }
+    ]
+}
