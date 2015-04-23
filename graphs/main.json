@@ -62,8 +62,7 @@
             "tgt": {
                 "process": "interaction/ListenMouse_egfa4",
                 "port": "element"
-            },
-            "metadata": {}
+            }
         },
         {
             "src": {
@@ -86,8 +85,7 @@
             "tgt": {
                 "process": "prompts/Alert_lfb1t",
                 "port": "in"
-            },
-            "metadata": {}
+            }
         },
         {
             "data": "#startbutton",
@@ -97,7 +95,7 @@
             }
         },
         {
-            "data": "\"supp\"",
+            "data": "\"Behold Griffin, Prince of All Dogs!\"",
             "tgt": {
                 "process": "core/Kick_ccrdf",
                 "port": "data"
