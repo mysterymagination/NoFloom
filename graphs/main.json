@@ -51,6 +51,26 @@
                 "width": 72,
                 "height": 72
             }
+        },
+        "interaction/ListenMouse_s6nyv": {
+            "component": "interaction/ListenMouse",
+            "metadata": {
+                "label": "interaction/ListenMouse",
+                "x": 318.41160668649303,
+                "y": -204.85493577624158,
+                "width": 72,
+                "height": 72
+            }
+        },
+        "interaction/ListenKeyboard_6f3tn": {
+            "component": "interaction/ListenKeyboard",
+            "metadata": {
+                "label": "interaction/ListenKeyboard",
+                "x": 648,
+                "y": -180,
+                "width": 72,
+                "height": 72
+            }
         }
     },
     "connections": [
